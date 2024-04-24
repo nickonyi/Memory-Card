@@ -1,0 +1,16 @@
+
+.loading-page {
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-page img {
+    height: 150px; 
+}
+
+.loading-page p {
+    color: rgb(170, 45, 45);
+}
