@@ -1,0 +1,40 @@
+.logo {
+    width: 500px;
+}
+
+.start-page {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-page h1 {
+    font-size: 60px;
+    color: rgb(49, 126, 156);
+    text-shadow: -0.06em 0 0.08em black, 0.06em 0 0.08em black,
+                 0 0.06em 0.08em black, 0 -0.06em 0.08em black,
+                 -0.06em 0.06em 0.08em black, 0.06em 0.06em 0.08em black,
+                 -0.06em -0.06em 0.08em black, 0.06em -0.06em 0.08em black;
+    margin-bottom: 50px;
+}
+
+.difficulty-levels {
+    display: flex;
+    gap: 20px;
+}
+
+.difficulty-levels button {
+    padding: 14px 18px 14px 18px;
+    background-color: rgb(49, 126, 156);
+    color: black;
+    box-shadow:  0px 5px 10px #000000, -0px -5px 10px #000000;
+
+    font-size: 24px;
+    border-radius: 8px;
+}
+
+.difficulty-levels button:hover {
+    cursor: pointer;
+}
