@@ -11,6 +11,10 @@ function App() {
   const [isLoading,setIsLoading] = useState(false);
   const [difficultyLevel,setDifficultyLevel] = useState([]);
   const [isSoundPlaying,setIsSoundPlaying] = useState(true);
+  const [charactersToPlayWith,setCharactersToPlayWith] = useState([]);
+  const [charactersToDisplay,setCharactersToDisplay] = useState([]);
+  const [score,setScore] = useState(0);
+  const [bestScore,setBestScore] = useState(0);
 
   useEffect(()=>{
     setInterval(()=>{
@@ -18,12 +22,21 @@ function App() {
     },3700)
   },[]);
 
+  console.log(difficultyLevel);
+
   const playClick = ()=> {
      if(isSoundPlaying){
        const audio = new Audio(clickSound);
        audio.volume = 0.07;
        audio.play();
      }
+  }
+
+  const goBackToStartPage = ()=> {
+    setDifficultyLevel([]);
+    charactersToPlayWith.forEach(character => {
+      character.click = false;
+    })
   }
 
   return (
@@ -36,7 +49,13 @@ function App() {
           <StartPage
            setDifficultyLevel={setDifficultyLevel}
            playClick={playClick}
-          />:<GamePage/>
+          />:<GamePage
+             goBackToStartPage = {goBackToStartPage}
+             playClick={playClick}
+             score = {score}
+             bestScore = {bestScore}
+          
+           />
         }
         </>
       )
