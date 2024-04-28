@@ -5,6 +5,7 @@ import StartPage from './pages/StartPage';
 import GamePage from './pages/GamePage';
 import video from './assets/img/back_vid.mp4';
 import clickSound from './assets/sounds/click.wav';
+import characters from './characters';
 
 
 function App() {
@@ -39,6 +40,35 @@ function App() {
     })
   }
 
+  const getCharactersToPlayWith = ()=>{
+    const randomCharacters = [];
+
+    while(randomCharacters.length < difficultyLevel[0]){
+      const randomNum = Math.floor(Math.random() * 10);
+      if(!randomCharacters.includes(characters[randomNum])){
+         randomCharacters.push(characters[randomNum])
+      }
+    }
+    setCharactersToPlayWith(randomCharacters);
+    shuffle(randomCharacters);
+  }
+
+  const shuffle = (array)=> {
+    let shuffledCharacters = [];
+    let clicked = 0;
+
+    while (shuffledCharacters.length <  difficultyLevel[1]) {
+        const randomNum = Math.floor(Math.random() * array.length);
+        const character = array[randomNum];
+
+        if(!shuffledCharacters.includes(character) && clicked < difficultyLevel[1] - 1 || !character.clicked){
+          shuffledCharacters.push(character);
+          clicked += +character.clicked;
+        }
+    }
+    setCharactersToDisplay(shuffledCharacters);
+  }
+
   return (
     <>
     {
@@ -54,6 +84,13 @@ function App() {
              playClick={playClick}
              score = {score}
              bestScore = {bestScore}
+             setScore = {setScore}
+             setBestScore = {setBestScore}
+             getCharactersToPlayWith = {getCharactersToPlayWith}
+             setCharactersToPlayWith={setCharactersToPlayWith}
+             setCharactersToDisplay={setCharactersToDisplay}
+             charactersToPlayWith = {charactersToPlayWith}
+             charactersToDisplay={charactersToDisplay}
           
            />
         }

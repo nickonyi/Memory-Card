@@ -1,4 +1,5 @@
 import { useState,useEffect } from "react"
+import { motion } from "framer-motion"
 import Header from "../components/Header"
 import Card from "../components/Card"
 import '../styles/GamePage.css'
@@ -9,8 +10,29 @@ function GamePage({
     playClick,
     score,
     bestScore,
+    setScore,
+    setBestScore,
+    getCharactersToPlayWith,
+    setCharactersToPlayWith,
+    setCharactersToDisplay,
+    charactersToPlayWith ,
     charactersToDisplay
 }){
+    useEffect(()=> {
+        getCharactersToPlayWith();
+
+        return ()=> {
+               setCharactersToPlayWith([]);
+               setScore(0);
+               setBestScore(0);
+               charactersToPlayWith.forEach(character => {
+                   character.clicked = false;
+               })
+        }
+    
+    },[])
+
+    console.log(charactersToDisplay);
 
 
     return (
