@@ -16,8 +16,13 @@ function GamePage({
     setCharactersToPlayWith,
     setCharactersToDisplay,
     charactersToPlayWith ,
-    charactersToDisplay
+    charactersToDisplay,
+    stateRoundResult
 }){
+
+    const [isFlipped, setIsFlipped] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
+    const [result,setResult ] = useState('');
     useEffect(()=> {
         getCharactersToPlayWith();
 
@@ -32,7 +37,12 @@ function GamePage({
     
     },[])
 
-    console.log(charactersToDisplay);
+    const handleCardClick = (character)=> {
+        setIsClicked(true);
+        console.log(character.name);
+        if(isClicked) return;
+        
+    }
 
 
     return (
@@ -50,7 +60,18 @@ function GamePage({
             animate={{scale: 1}}
             transition={{duration: 0.5}}>
              <div className="card-section">
-
+                 {
+                    charactersToDisplay.map(character => {
+                        return (
+                            <Card
+                                key={character.id}
+                                character={character}
+                                isFlipped={isFlipped}
+                                handleCardClick={handleCardClick}
+                            />
+                        )
+                    })
+                 }
              </div>
 
         </motion.div>

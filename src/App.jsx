@@ -23,7 +23,7 @@ function App() {
     },3700)
   },[]);
 
-  console.log(difficultyLevel);
+ 
 
   const playClick = ()=> {
      if(isSoundPlaying){
@@ -61,12 +61,23 @@ function App() {
         const randomNum = Math.floor(Math.random() * array.length);
         const character = array[randomNum];
 
-        if(!shuffledCharacters.includes(character) && clicked < difficultyLevel[1] - 1 || !character.clicked){
+        if(!shuffledCharacters.includes(character) && (clicked < difficultyLevel[1] - 1 || !character.clicked)){
           shuffledCharacters.push(character);
           clicked += +character.clicked;
         }
     }
     setCharactersToDisplay(shuffledCharacters);
+  }
+
+  const stateRoundResult=(character)=>{
+    if(character.clicked){
+      return 'lose';
+    }
+    if(score === difficultyLevel[0] - 1){
+      return 'win';
+    } else {
+      return ''
+    }
   }
 
   return (
@@ -91,6 +102,7 @@ function App() {
              setCharactersToDisplay={setCharactersToDisplay}
              charactersToPlayWith = {charactersToPlayWith}
              charactersToDisplay={charactersToDisplay}
+             stateRoundResult={stateRoundResult}
           
            />
         }
