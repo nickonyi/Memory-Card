@@ -8,6 +8,8 @@ import '../styles/GamePage.css'
 function GamePage({
     goBackToStartPage,
     playClick,
+    playFlip,
+    countScore,
     score,
     bestScore,
     setScore,
@@ -17,7 +19,8 @@ function GamePage({
     setCharactersToDisplay,
     charactersToPlayWith ,
     charactersToDisplay,
-    stateRoundResult
+    stateRoundResult,
+    shuffle
 }){
 
     const [isFlipped, setIsFlipped] = useState(false);
@@ -38,9 +41,35 @@ function GamePage({
     },[])
 
     const handleCardClick = (character)=> {
+         // Prevents user from multiple clicks while card is flipping
+        //after timeout below isClicked is false again and user can click
+        //on the card
         setIsClicked(true);
-        console.log(character.name);
         if(isClicked) return;
+
+        let turnResult = stateRoundResult(character);
+        // Prevents all actions from happening if user wins or looses
+        if(turnResult !== ''){
+            if(turnResult === 'win'){
+                countScore();
+                setIsClicked(false);
+                return;
+            }
+        }
+        countScore();
+
+        setIsFlipped(true);
+        playFlip();
+        setTimeout(()=>{
+            shuffle(charactersToPlayWith);
+        },800)
+
+        setTimeout(()=>{
+            setIsFlipped(false);
+            setIsClicked(false);
+            playFlip();
+            turnResult = '';
+        },1300)
         
     }
 

@@ -47,7 +47,7 @@
     cursor: pointer;
 }
 
-.card .flipped {
+.card.flipped {
     transform: rotateY(180deg);
 }
 
@@ -82,6 +82,16 @@
     background-image: url(../assets/img/ALOK.jpeg);
     color: white;
     font-size: 22px;
+}
+
+.card-back {
+    height: 100%;
+    background: url(../assets/img/ALOK.jpeg);
+    backface-visibility: hidden;
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+    transform: rotateY(180deg);
 }
 
 .name {

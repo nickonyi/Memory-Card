@@ -5,6 +5,7 @@ import StartPage from './pages/StartPage';
 import GamePage from './pages/GamePage';
 import video from './assets/img/back_vid.mp4';
 import clickSound from './assets/sounds/click.wav';
+import flipSound from './assets/sounds/flip.mp3';
 import characters from './characters';
 
 
@@ -33,6 +34,14 @@ function App() {
      }
   }
 
+  const playFlip = ()=> {
+      if(isSoundPlaying){
+        const audio = new Audio(flipSound);
+        audio.volume = 0.7;
+        audio.play();
+      }
+  }
+
   const goBackToStartPage = ()=> {
     setDifficultyLevel([]);
     charactersToPlayWith.forEach(character => {
@@ -44,7 +53,7 @@ function App() {
     const randomCharacters = [];
 
     while(randomCharacters.length < difficultyLevel[0]){
-      const randomNum = Math.floor(Math.random() * 10);
+      const randomNum = Math.floor(Math.random() * characters.length);
       if(!randomCharacters.includes(characters[randomNum])){
          randomCharacters.push(characters[randomNum])
       }
@@ -79,6 +88,12 @@ function App() {
       return ''
     }
   }
+  const countScore = ()=> {
+    setScore(score + 1);
+    if(score >= bestScore){
+      setBestScore(score + 1);
+    }
+  }
 
   return (
     <>
@@ -93,6 +108,8 @@ function App() {
           />:<GamePage
              goBackToStartPage = {goBackToStartPage}
              playClick={playClick}
+             playFlip={playFlip}
+             countScore={countScore}
              score = {score}
              bestScore = {bestScore}
              setScore = {setScore}
@@ -103,6 +120,7 @@ function App() {
              charactersToPlayWith = {charactersToPlayWith}
              charactersToDisplay={charactersToDisplay}
              stateRoundResult={stateRoundResult}
+             shuffle = {shuffle}
           
            />
         }
