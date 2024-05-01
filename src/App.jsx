@@ -3,6 +3,7 @@ import './styles/App.css'
 import LoadingPage from './pages/LoadingPage';
 import StartPage from './pages/StartPage';
 import GamePage from './pages/GamePage';
+import Footer from './components/Footer';
 import video from './assets/img/back_vid.mp4';
 import clickSound from './assets/sounds/click.wav';
 import flipSound from './assets/sounds/flip.mp3';
@@ -13,6 +14,7 @@ function App() {
   const [isLoading,setIsLoading] = useState(false);
   const [difficultyLevel,setDifficultyLevel] = useState([]);
   const [isSoundPlaying,setIsSoundPlaying] = useState(true);
+  const [isMusicPlaying,setIsMusicPlaying] = useState(false);
   const [charactersToPlayWith,setCharactersToPlayWith] = useState([]);
   const [charactersToDisplay,setCharactersToDisplay] = useState([]);
   const [score,setScore] = useState(0);
@@ -95,6 +97,8 @@ function App() {
     }
   }
 
+  
+
   return (
     <>
     {
@@ -121,9 +125,16 @@ function App() {
              charactersToDisplay={charactersToDisplay}
              stateRoundResult={stateRoundResult}
              shuffle = {shuffle}
-          
            />
         }
+
+        <Footer
+          isMusicPlaying={isMusicPlaying}
+          setIsMusicPlaying={setIsMusicPlaying}
+          isSoundPlaying={isSoundPlaying}
+          setIsSoundPlaying={setIsSoundPlaying}
+          playClick={playClick}
+        />
         </>
       )
     }

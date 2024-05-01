@@ -1,7 +1,8 @@
 import { useState,useEffect } from "react"
-import { motion } from "framer-motion"
+import { motion,AnimatePresence } from "framer-motion"
 import Header from "../components/Header"
 import Card from "../components/Card"
+import GameOver from "../components/GameOver"
 import '../styles/GamePage.css'
 
 
@@ -26,6 +27,7 @@ function GamePage({
     const [isFlipped, setIsFlipped] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
     const [result,setResult ] = useState('');
+   
     useEffect(()=> {
         getCharactersToPlayWith();
 
@@ -48,6 +50,9 @@ function GamePage({
         if(isClicked) return;
 
         let turnResult = stateRoundResult(character);
+        
+        setResult(turnResult);
+        character.clicked = true;
         // Prevents all actions from happening if user wins or looses
         if(turnResult !== ''){
             if(turnResult === 'win'){
@@ -72,7 +77,16 @@ function GamePage({
         },1300)
         
     }
+   
 
+    const restartGame = () => {
+        setScore(0);
+        setResult('');
+        charactersToPlayWith.forEach(character => {
+            character.clicked = false;
+        })
+        getCharactersToPlayWith();
+    }
 
     return (
         <>
@@ -102,8 +116,19 @@ function GamePage({
                     })
                  }
              </div>
-
+            <div className="remain-indicator">{`${score}/${charactersToPlayWith.length}`}</div>
         </motion.div>
+        <AnimatePresence>
+            {
+                
+                result != '' &&
+                <GameOver
+                  restartGame = {restartGame}
+                  playClick = {playClick}
+                    result = {result}
+                />
+            }
+        </AnimatePresence>
         </>
     )
 }

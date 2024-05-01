@@ -9,6 +9,20 @@
     color: white;
 }
 
+.score {
+    flex-shrink: 0;
+    padding: 15px;
+    margin-left: 40px;
+    background-color: rgb(49, 126, 156);
+    color: white;
+    font-size: 24px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px #424242, -0px -5px 15px #424242;
+    & div:first-child {
+        margin-bottom: 10px;
+    }
+}
+
 .header-container img {
     height: 120px;
     cursor: pointer;
@@ -97,4 +111,102 @@
 .name {
     margin-top: 5px;
     text-align: center;
+}
+
+.remain-indicator {
+    font-size: 20px;
+    color: white;
+}
+
+.win {
+    position: absolute;
+    aspect-ratio: 1.82 / 1;
+    width: 800px;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url(../assets/img/won.jpeg);
+    background-size: 100% 180%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 25px;
+    box-shadow: 0px 5px 20px #113661, -0px -5px 20px #113661;
+}
+
+.win div {
+    margin-top: 25px;
+    font-size: 40px;
+    padding: 15px 30px 15px 30px;
+    background-color: rgb(50, 104, 165);
+    color: white;
+    border-radius: 20px;
+}
+
+.win button {
+    margin-bottom: 25px;
+    font-size: 26px;
+    padding: 12px 20px 12px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    transition: scale .7s ease-in-out;
+}
+
+.lost {
+    position: absolute;
+    aspect-ratio: 1.82 / 1;
+    width: 800px;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url(../assets/img/korad.jpeg);
+    background-size: 100% 120%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 25px;
+    box-shadow: 0px 5px 20px #611111, -0px -5px 20px #611111;
+}
+
+.lost div {
+    margin-top: 25px;
+    font-size: 40px;
+    padding: 15px 30px 15px 30px;
+    background-color: rgb(175, 15, 15);
+    color: white;
+    border-radius: 20px;
+}
+
+.lost button {
+    margin-bottom: 25px;
+    font-size: 26px;
+    padding: 12px 20px 12px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    transition: scale .7s ease-in-out;
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+.win button:hover {
+    scale: 1.2;
+}
+
+.lost button:hover {
+    scale: 1.2;
 }
