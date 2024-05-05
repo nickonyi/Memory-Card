@@ -33,3 +33,29 @@ footer button:hover {
 .svg {
     height: 25px;
 }
+
+.instructions {
+    position: fixed;
+    bottom: 80px;
+    right: 160px;
+    margin-left: 10px;
+    & div:first-child {
+        margin-bottom: 10px;
+    }
+}
+
+.instructions div {
+    padding: 20px 20px 20px 20px;
+    background-color: rgb(49, 126, 156);
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 8px #f18406, -0px -0px 8px #f5b505;
+}
+
+.mako-info {
+    position: fixed;
+    height: 170px;
+    bottom: -3px;
+    right: 70px;
+}

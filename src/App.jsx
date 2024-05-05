@@ -5,12 +5,18 @@ import StartPage from './pages/StartPage';
 import GamePage from './pages/GamePage';
 import Footer from './components/Footer';
 import video from './assets/img/back_vid.mp4';
+import backgroundMusic from './assets/sounds/back_music.mp4';
+import Sound from 'react-sound';
 import clickSound from './assets/sounds/click.wav';
 import flipSound from './assets/sounds/flip.mp3';
 import characters from './characters';
 
 
-function App() {
+function App({
+  handleSongLoading,
+  handleSongPlaying,
+  handleSongFinishedPlaying
+}) {
   const [isLoading,setIsLoading] = useState(false);
   const [difficultyLevel,setDifficultyLevel] = useState([]);
   const [isSoundPlaying,setIsSoundPlaying] = useState(true);
@@ -142,6 +148,15 @@ function App() {
     <video autoPlay muted loop id='my-video'>
        <source src={video} type='video/mp4'/>
     </video>
+
+    <Sound 
+          url={backgroundMusic}
+          playStatus={isMusicPlaying ? Sound.status.PLAYING : Sound.status.PAUSED}
+          onLoading={handleSongLoading}
+          onPlaying={handleSongPlaying}
+          onFinishedPlaying={handleSongFinishedPlaying}
+          volume={5.8}
+          loop={true}/>
     </>
   )
 }

@@ -4,7 +4,7 @@ import '../styles/LoadingPage.css';
 function LoadingPage(){
 return (
     <div className='loading-page'>
-        <img src={loading} alt="ghazan bending" />
+        <img className='load-img' src={loading} alt="ghazan bending" />
         <p>Loading...</p>
     </div>
 )
