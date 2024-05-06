@@ -145,9 +145,9 @@ function App({
       )
     }
 
-    <video autoPlay muted loop id='my-video'>
-       <source src={video} type='video/mp4'/>
-    </video>
+   <video autoPlay muted loop id='my-video'>
+      <source src={video} type='video/mp4'/>
+   </video>
 
     <Sound 
           url={backgroundMusic}

@@ -5,13 +5,25 @@
     box-sizing: border-box;
 }
 
-#root {
+html {
     min-height: 100vh;
+    font-family: Potta One, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.logo {
+    width: 5px;
+}
+
+#root {
     display: flex;
     flex-direction: column;
     font-family: Potta One, sans-serif;
     width: 100%;
-    overflow: hidden;
+    min-height: 100vh;
 }
 
 video {
@@ -21,4 +33,8 @@ video {
     height: 100%;
     object-fit: cover;
     filter: brightness(70%);
+}
+
+button {
+    font-family: Potta One, sans-serif;
 }

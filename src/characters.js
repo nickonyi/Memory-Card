@@ -10,6 +10,11 @@ import pli from './assets/img/characters/pli.jpeg'
 import tenzin from './assets/img/characters/tenzin.jpeg'
 import unalaq from './assets/img/characters/unalaq.jpeg'
 import zaheer from './assets/img/characters/zaheer.jpeg'
+import iroh from './assets/img/characters/iroh.jpeg'
+import lyn from './assets/img/characters/lyn.jpeg'
+import opal from './assets/img/characters/opal.jpeg'
+import suyin from './assets/img/characters/suyin.jpeg'
+import meelo from './assets/img/characters/meelo.jpeg'
 
 
 const characters = [{
@@ -77,7 +82,37 @@ const characters = [{
         name: 'Zaheer',
         src: zaheer,
         clicked: false,
-    }
+    },
+    {
+        id: uniqid(),
+        name: 'Suyin',
+        src: suyin,
+        clicked: false,
+    },
+    {
+        id: uniqid(),
+        name: 'Meelo',
+        src: meelo,
+        clicked: false,
+    },
+    {
+        id: uniqid(),
+        name: 'Opal',
+        src: opal,
+        clicked: false,
+    },
+    {
+        id: uniqid(),
+        name: 'Lin',
+        src: lyn,
+        clicked: false,
+    },
+    {
+        id: uniqid(),
+        name: 'Iroh',
+        src: iroh,
+        clicked: false,
+    },
 ];
 
 export default characters;

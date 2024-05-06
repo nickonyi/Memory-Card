@@ -45,13 +45,13 @@ function StartPage({setDifficultyLevel, playClick}){
                       Easy
                    </button>
                    <button onClick={()=>{
-                        setDifficultyLevel([8,4]);
+                        setDifficultyLevel([10,4]);
                         playClick();
                     }}>
                       Medium
                    </button>
                    <button onClick={()=>{
-                        setDifficultyLevel([11,5]);
+                        setDifficultyLevel([16,5]);
                         playClick();
                     }}>
                       Hard
