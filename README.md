@@ -5,7 +5,7 @@ The **Memory Card** project is created according to the assignment from **The Od
 
 ![Preview](public/memory-card.png)
 
-### 🔗 **Live preview** of the project is [here](https://alex-dishen.github.io/memory-card/).
+### 🔗 **Live preview** of the project is [here](https://memory-card-inky.vercel.app/).
 
 ## **Features**
 * Loading page
@@ -13,16 +13,16 @@ The **Memory Card** project is created according to the assignment from **The Od
 
 ## **Outcome**
 * Used **React**
-* Used **SCSS**
+* Used **CSS**
 * Learned animations with Framer Motion
 * Learned conditional rendering
 * Learned importance of smaller components
 
 ## **Getting Started**
 ```
-HTTPS - git clone https://github.com/alex-dishen/memory-card.git
+HTTPS - git clone https://github.com/nickonyi/Memory-Card.git
 
-SSH - git clone git@github.com:alex-dishen/memory-card.git
+SSH - git clone git@github.com:nickonyi/Memory-Card.git
 
 cd memory-card
 
