@@ -1,8 +1,33 @@
-# React + Vite
+# Memory Card
+The **Memory Card** project is created according to the assignment from **The Odin Project** [course](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript).
+<br>
+<br>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Preview](public/memory-card.png)
 
-Currently, two official plugins are available:
+### 🔗 **Live preview** of the project is [here](https://alex-dishen.github.io/memory-card/).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **Features**
+* Loading page
+* Difficulty level
+
+## **Outcome**
+* Used **React**
+* Used **SCSS**
+* Learned animations with Framer Motion
+* Learned conditional rendering
+* Learned importance of smaller components
+
+## **Getting Started**
+```
+HTTPS - git clone https://github.com/alex-dishen/memory-card.git
+
+SSH - git clone git@github.com:alex-dishen/memory-card.git
+
+cd memory-card
+
+npm install
+
+npm start
+```
+
